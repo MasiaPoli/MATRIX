@@ -16,7 +16,6 @@ void e_swap(element_t* a, element_t* b);
 matrix* trans(matrix* a, matrix* b);
 matrix* self_t(matrix* a);
 matrix* matrix_umn(matrix* a, matrix* b, matrix* c);
-matrix* m_deg(matrix* a, int d);
 element_t m_norm(matrix* a);
 matrix* onnumber(matrix* a, element_t b);
 matrix* m_exp(matrix* a, element_t eps);

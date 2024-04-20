@@ -59,7 +59,8 @@ int main()
     }
     printf("Write a size\n");
     scanf("%d", &n);
-    a=alloc(n, n+1);
+    a=re_alloc(a, n, n+1);
+    matrix* A=alloc(n, n);
     for(int i=0; i<n; i++)
     {
         for(int j=0; j<=n; j++)
@@ -67,12 +68,14 @@ int main()
             double x;
             scanf("%lf", &x);
             change(a, i, j, x);
+            if(j!=n)
+            {
+                change(A, i, j, x);
+            }
         }
     }
-      matrix* A=alloc(n, n+1);
-    A=matrix_copy(a, A);
-    A=re_alloc(A, n, n);
-    b=gauss(a);
+  b=re_alloc(b, n, 0);
+  b=gauss(a);
     double X=poind(b, 0, 0);
     if(X!=X)
     {
