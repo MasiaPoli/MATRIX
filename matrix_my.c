@@ -6,10 +6,6 @@
 #include "matr.h"
 matrix* sume(matrix* a, matrix* b)
 {
-    size_t ma=matrix_m(a);
-    size_t mb=matrix_m(b);
-    size_t na=matrix_n(a);
-    size_t nb=matrix_n(b);
     if(!a)
     {
         return NULL;
@@ -18,6 +14,10 @@ matrix* sume(matrix* a, matrix* b)
     {
         return NULL;
     }
+    size_t ma=matrix_m(a);
+    size_t mb=matrix_m(b);
+    size_t na=matrix_n(a);
+    size_t nb=matrix_n(b);
     if(ma!=mb)
     {
         return NULL;
@@ -273,7 +273,7 @@ void mins(matrix* a, size_t x, size_t y, element_t c)
 }
 void strumn(matrix* a, size_t x, element_t c)
 {
-     size_t na=matrix_n(a);
+    size_t na=matrix_n(a);
     for(size_t j=0; j<na; j++)
     {
         element_t k=poind(a, x, j);
