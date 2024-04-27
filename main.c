@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include "matrix_my.h"
+#include "matr.h"
 int main()
 {
     matrix* a;
@@ -32,6 +33,7 @@ int main()
         }
         printf("\n");
     }
+    matrix_free(b);
     printf("Write a sizes\n");
     int mk;
     scanf("%d%d", &mk, &n);
@@ -57,9 +59,10 @@ int main()
         }
         printf("\n");
     }
+    matrix_free(a);
     printf("Write a size\n");
     scanf("%d", &n);
-    a=re_alloc(a, n, n+1);
+    a=alloc(n, n+1);
     matrix* A=alloc(n, n);
     for(int i=0; i<n; i++)
     {
@@ -74,7 +77,7 @@ int main()
             }
         }
     }
-  b=re_alloc(b, n, 0);
+  b=alloc(n, 0);
   b=gauss(a);
     double X=poind(b, 0, 0);
     if(X!=X)

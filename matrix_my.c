@@ -316,8 +316,9 @@ matrix* gauss (matrix* a)
         change(b, 0, 0, 0.0/0.0);
         return b;
     }
-    for(size_t i=ma-1; i>=0; i--)
+    for(size_t j=ma; j>0; j--)
     {
+        size_t i=j-1;
         element_t x=poind(a, i, na-1);
         for(size_t j=ma-1; j>i; j--)
         {
@@ -325,10 +326,6 @@ matrix* gauss (matrix* a)
         }
         element_t u=poind(a, i, i);
         change(b, i, 0, x/u);
-        if(i==0)
-        {
-            break;
-        }
     }
     return b;
 }

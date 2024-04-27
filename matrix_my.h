@@ -3,14 +3,8 @@
 typedef struct matrix matrix;
 typedef double element_t;
 struct matrix;
-matrix* alloc(size_t m, size_t n);
-matrix* null_alloc(size_t m, size_t n);
-matrix* e_alloc(size_t m, size_t n);
-void change(matrix* a, size_t i, size_t j, element_t x);
-element_t poind(matrix* a, size_t i, size_t j);
 matrix* sume(matrix* a, matrix* b);
-matrix* re_alloc(matrix* a, size_t m, size_t n);
-void matrix_free(matrix* a);
+matrix* sum(matrix* a, matrix* b, matrix* c);
 matrix* matrix_copy(matrix* a, matrix* b);
 void e_swap(element_t* a, element_t* b);
 matrix* trans(matrix* a, matrix* b);
