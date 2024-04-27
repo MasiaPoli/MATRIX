@@ -77,7 +77,6 @@ int main()
             }
         }
     }
-  b=alloc(n, 0);
   b=gauss(a);
     double X=poind(b, 0, 0);
     if(X!=X)
